@@ -4,17 +4,20 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { config } from "@/lib/config";
 
+
 const legan = localFont({
   src: "./fonts/Legan.woff",
   variable: "--font-legan",
   weight: "100 900",
 });
 
+
 const thesignature = localFont({
   src: "./fonts/Thesignature.ttf",
   variable: "--font-thesignature",
   weight: "100 900",
 });
+
 
 const wonder = localFont({
   src: "./fonts/Wonder.woff",
@@ -31,10 +34,28 @@ const ovo = Ovo({
 
 export const metadata: Metadata = {
   title: `The Martumpol of ${config.coupleNames}`,
-  description: `Wedding Invitation of ${config.coupleNames}, made by Yuma Studio`,
+  description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
   icons: {
-    icon: '/r&t.svg', // Simpan file logo-nikah.png di folder public
-  }
+    icon: '/r&t.svg',
+  },
+  openGraph: {
+    title: `The Martumpol of ${config.coupleNames}`,
+    description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
+    images: [
+      {
+        url: '/slide_7.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'The Martumpol of ' + config.coupleNames,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `The Martumpol of ${config.coupleNames}`,
+    description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
+    images: ['/slide_7.jpg'],
+  },
 };
 
 export default function RootLayout({

@@ -5,6 +5,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import CountdownTimer from "./Countdown";
+import Gallery from "./Gallery";
 import { config } from "@/lib/config";
 
 type WeddingScreenProps = {
@@ -216,7 +217,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                 <div className="space-y-1 text-left">
     <p className="font-legan text-sm italic text-gray-600">Putra Dari :</p>
     <h4 className="font-legan text-base text-gray-800 leading-relaxed">
-      Bapak Marudut Tambuna & <br className="md:hidden" /> Ibu Lusiana Hutapea
+      Bapak Marudut Tambunan & <br className="md:hidden" /> Ibu Lusiana Hutapea
     </h4>
   </div>
                 {/* Groom bio and Instagram removed */}
@@ -395,6 +396,18 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
 
 
 
+            {/* SLIDE GALLERY */}
+            <div
+              className="snap-start text-black h-screen flex flex-col justify-center items-center px-4 md:px-12 bg-white/80"
+              style={{
+                backgroundImage: `url(/foto_1.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <Gallery />
+            </div>
+
             {/* SLIDE AKHIR */}
             <div
               className="snap-start text-black h-screen flex flex-col justify-start pt-20 px-12" // Ganti justify-end jadi justify-start "
@@ -444,7 +457,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
         )}
       </div>
       {/* Audio Element */}
-      <audio ref={audioRef} src="/music/wedding_song.mp3" preload="auto" />
+      <audio ref={audioRef} src="/music/wedding_song.mp3" preload="auto" loop />
     </div>
   );
 };
