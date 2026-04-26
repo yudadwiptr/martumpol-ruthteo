@@ -88,14 +88,17 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
   return (
     <div
       className={`h-screen w-screen flex flex-col md:flex-row ${fadeClass} transition-opacity duration-1000`}
+      style={{ backgroundColor: '#fff' }}
     >
       {/* Gambar sisi kiri Wide Untuk Komputer */}
       <div
         className="md:flex justify-center hidden items-end pb-12 w-2/3 h-1/2 md:h-full"
         style={{
-          backgroundImage: `url(/foto_1_samping.jpg)`, //refer to base 1st photo
+          backgroundImage: `url(/foto_1_samping.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundColor: '#fff',
+          backgroundAttachment: 'scroll', // prevent black bg on mobile scroll
         }}
       >
         <div
@@ -139,19 +142,10 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   day: "numeric",
                 })}
               </h5>
-              {/* Personalized Invitation Block */}
-              <div className="flex flex-col items-center justify-center mt-8">
-                <p className="text-sm font-legan uppercase tracking-widest mb-2">Dear,</p>
-                {/* Kalau ada nama di link, tampilin. Kalau nggak ada, tampilin "Guest" */}
-                <h2 className="text-xl font-ovo uppercase tracking-wider">
-                  {to ? decodeURIComponent(to) : "Our Guest"}
-                </h2>
-                <p className="text-[10px] mt-4 opacity-70">You are invited to our celebration</p>
-              </div>
             </div>
             <div>
               <p className="mt-20 text-lg uppercase font-xs tracking-widest text-white stroke-black">
-                {name ? `Dear ${name},` : "Welcome"}
+                {to ? decodeURIComponent(to) : ""}
               </p>
               {!isOpen ? (
                 <button
@@ -166,6 +160,16 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   className="mx-auto mt-20 animate-upDown text-black"
                 />
               )}
+              {/* Personalized Invitation Block moved to bottom */}
+              <div className="flex flex-col items-center justify-center mt-12">
+                <p className="text-xl font-legan uppercase tracking-widest mb-2 text-white stroke-black">Dear,</p>
+                {to && (
+                  <h2 className="text-xl font-ovo uppercase tracking-wider text-white stroke-black">
+                    {decodeURIComponent(to)}
+                  </h2>
+                )}
+                <p className="text-[10px] mt-4 opacity-70 text-white stroke-black">You are invited to our celebration</p>
+              </div>
             </div>
           </div>
         </div>
@@ -187,10 +191,10 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                 <h1 className="text-xl md:text-2xl font-ovo tracking-wide text-black uppercase">
                   {config.bibleVerse}
                 </h1>
-                <p className="text-sm mt-5 text-black font-legan">
+                <p className="text-sm mt-3 text-black font-legan">
                   {config.bibleVerseContent}
                 </p>
-                <p className="absolute bottom-2 left-0 right-0 text-center text-6xl font-wonder stroke-black">{config.coupleNames}</p>
+                <p className="absolute bottom-2 left-0 right-0 text-center text-6xl font-wonder text-white stroke-black">{config.coupleNames}</p>
               </div>
             </div>
             {/* Slide 2 */}
@@ -281,7 +285,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
   </p>
   {/* Button Google Maps */}
   <a
-    href="https://maps.app.goo.gl/P63rV5WJvN9yS6Yv8" // Ganti dengan link share dari Google Maps jika berbeda
+    href="https://www.google.com/maps/dir/?api=1&destination=Gereja+GKPI+Palembang" // Ganti dengan link share dari Google Maps jika berbeda
     target="_blank"
     rel="noopener noreferrer"
     className="mt-6 px-5 py-2 bg-black text-white rounded-full font-legan text-xs uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 shadow-lg active:scale-95"
