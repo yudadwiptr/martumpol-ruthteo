@@ -16,6 +16,13 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const audioRef = useRef(null);
 
+  // Ambil parameter "to" dari URL jika ada
+  let to: string | null = null;
+  if (typeof window !== "undefined") {
+    const params = new URLSearchParams(window.location.search);
+    to = params.get("to");
+  }
+
   // Untuk fade-in pertama kali
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -132,6 +139,15 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   day: "numeric",
                 })}
               </h5>
+              {/* Personalized Invitation Block */}
+              <div className="flex flex-col items-center justify-center mt-8">
+                <p className="text-sm font-legan uppercase tracking-widest mb-2">Dear,</p>
+                {/* Kalau ada nama di link, tampilin. Kalau nggak ada, tampilin "Guest" */}
+                <h2 className="text-xl font-ovo uppercase tracking-wider">
+                  {to ? decodeURIComponent(to) : "Our Guest"}
+                </h2>
+                <p className="text-[10px] mt-4 opacity-70">You are invited to our celebration</p>
+              </div>
             </div>
             <div>
               <p className="mt-20 text-lg uppercase font-xs tracking-widest text-white stroke-black">
