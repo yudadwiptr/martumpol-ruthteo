@@ -145,7 +145,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             </div>
             <div>
               <p className="mt-20 text-lg uppercase font-xs tracking-widest text-white stroke-black">
-                {to ? decodeURIComponent(to) : ""}
+                {/* Removed duplicate name display at the top */}
               </p>
               {!isOpen ? (
                 <button
@@ -162,13 +162,13 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               )}
               {/* Personalized Invitation Block moved to bottom */}
               <div className="flex flex-col items-center justify-center mt-12">
-                <p className="text-xl font-legan uppercase tracking-widest mb-2 text-white stroke-black">Dear,</p>
+                <p className="text-xl font-legan uppercase tracking-widest mb-2 text-white stroke-black drop-shadow-lg" style={{textShadow: '2px 2px 8px #000, 0 0 2px #000'}}>Dear,</p>
                 {to && (
-                  <h2 className="text-xl font-ovo uppercase tracking-wider text-white stroke-black">
+                  <h2 className="text-2xl font-ovo uppercase tracking-wider text-white stroke-black drop-shadow-lg" style={{textShadow: '2px 2px 8px #000, 0 0 2px #000'}}>
                     {decodeURIComponent(to)}
                   </h2>
                 )}
-                <p className="text-[10px] mt-4 opacity-70 text-white stroke-black">You are invited to our celebration</p>
+                <p className="text-[12px] mt-4 text-white stroke-black drop-shadow-lg" style={{textShadow: '2px 2px 8px #000, 0 0 2px #000'}}>You are invited to our celebration</p>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                 <h1 className="text-xl md:text-2xl font-ovo tracking-wide text-black uppercase">
                   {config.bibleVerse}
                 </h1>
-                <p className="text-sm mt-3 text-black font-legan">
+                <p className="text-sm mt-1 text-black font-legan">
                   {config.bibleVerseContent}
                 </p>
                 <p className="absolute bottom-2 left-0 right-0 text-center text-6xl font-wonder text-white stroke-black">{config.coupleNames}</p>
