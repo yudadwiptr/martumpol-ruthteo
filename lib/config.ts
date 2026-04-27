@@ -47,5 +47,5 @@ export const config = {
         detail: process.env.NEXT_PUBLIC_RSVP_DETAIL || "Default RSVP Detail",
     },
     thankyou: process.env.NEXT_PUBLIC_THANKYOU || "Horas • Mauliate Godang",
-    thankyouDetail: process.env.NEXT_PUBLIC_THANKYOU_DETAIL || "Sai tubu ma hamu, songon hariara",
+    thankyouDetail: process.env.NEXT_PUBLIC_THANKYOU_DETAIL || "“Marokkap gabe, marokkap mamora sahat tu na saur ma tua”",
 };

@@ -34,16 +34,16 @@ const ovo = Ovo({
 
 export const metadata: Metadata = {
   title: `The Martumpol of ${config.coupleNames}`,
-  description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
+  description: `Di dalam nama Tuhan Yesus Kristus dengan segala kerendahan hati, kami mengundang Anda untuk hadir di salah satu hari bahagia kami. Bergabunglah dalam acara Martupol kami, dimana cinta kami akan disatukan dan diberkati oleh Tuhan Yesus Kristus.`,
   icons: {
     icon: 'https://martumpol-bellateo.vercel.app/r&t.svg',
   },
   openGraph: {
     title: `The Martumpol of ${config.coupleNames}`,
-    description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
+    description: `Di dalam nama Tuhan Yesus Kristus dengan segala kerendahan hati, kami mengundang Anda untuk hadir di salah satu hari bahagia kami. Bergabunglah dalam acara Martupol kami, dimana cinta kami akan disatukan dan diberkati oleh Tuhan Yesus Kristus.`,
     images: [
       {
-        url: 'https://martumpol-bellateo.vercel.app/slide_7.jpg',
+        url: 'https://martumpol-bellateo.vercel.app/metafoto.jpg',
         width: 1200,
         height: 630,
         alt: 'The Martumpol of ' + config.coupleNames,
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `The Martumpol of ${config.coupleNames}`,
-    description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
-    images: ['https://martumpol-bellateo.vercel.app/slide_7.jpg'],
+    description: `Di dalam nama Tuhan Yesus Kristus dengan segala kerendahan hati, kami mengundang Anda untuk hadir di salah satu hari bahagia kami. Bergabunglah dalam acara Martupol kami, dimana cinta kami akan disatukan dan diberkati oleh Tuhan Yesus Kristus.`,
+    images: ['https://martumpol-bellateo.vercel.app/metafoto.jpg'],
   },
 };
 
