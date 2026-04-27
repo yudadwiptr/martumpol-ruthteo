@@ -132,16 +132,10 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                 {config.coupleNames}
               </h1>
               <h5
-                className={`text-sm  font-legan text-black uppercase tracking-wide  fadeMain2 ${isMain2InView ? "active" : ""
-                  } `}
+                className={`text-sm  font-legan text-black uppercase tracking-wide  fadeMain2 ${isMain2InView ? "active" : ""}`}
                 ref={main2Ref}
               >
-                {new Date(config.eventDate).toLocaleDateString("en-US", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                Saturday, May 2th 2026
               </h5>
                 {/* Hashtag spesial */}
                 <div className="mt-2">
