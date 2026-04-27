@@ -419,19 +419,25 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             >
               <div
                 ref={endRef}
-                className={` ${isEndInView ? "active" : ""} fadeInMove `}
+                className={` ${isEndInView ? "active" : ""} fadeInMove flex flex-col items-center -mt-10 `}
               >
-                <h1 className="text-3xl text-black  font-ovo text-center uppercase">
+                <h1 className="text-3xl text-black font-ovo text-center uppercase tracking-[0.2em]">
                   {config.thankyou}
                 </h1>
 
-                <div className="mt-5 mx-auto flex flex-col ">
-                  <p className="text-sm font-legan text-black text-center">
+                <div className="mt-2 mx-auto flex flex-col items-center ">
+                  <p className="text-[10px] md:text-xs font-legan text-black text-center whitespace-nowrap opacity-90 tracking-wide">
                     {config.thankyouDetail}
                   </p>
-                  <p className="text-sm rounded-full text-center font-ovo mt-5 px-6 py-2 text-black uppercase">
-                    {config.coupleNames}
+                  {/* Pembatas halus biar gak hambar (opsional, hapus kalau gak suka) */}
+    <div className="h-[1px] w-8 bg-gray-300 my-1"></div>
+                  {/* Teks With Love yang baru */}
+    <div className="mt-4 flex flex-col items-center">
+      <p className="text-xs font-legan italic text-gray-600 mb-1">With Love,</p>
+      <p className="text-xl font-ovo text-black uppercase tracking-[0.2em]">
+        Bella & Teofilus
                   </p>
+                </div>
                 </div>
               </div>
 
