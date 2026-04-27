@@ -143,6 +143,12 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                   day: "numeric",
                 })}
               </h5>
+                {/* Hashtag spesial */}
+                <div className="mt-2">
+                  <span className="text-xs md:text-sm font-bold font-legan text-black tracking-widest bg-white/80 px-3 py-1 rounded-full shadow border border-[#b91c1c]/20 select-all">
+                    #ThEOnlyoneforBELLA
+                  </span>
+                </div>
             </div>
             <div>
               <p className="mt-20 text-lg uppercase font-xs tracking-widest text-white stroke-black">
@@ -271,7 +277,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               <div
                 ref={slide5Ref}
                 className={` ${isSlide5InView ? "active" : ""
-                  }  fadeInMove flex items-center flex-col items-center justify-start h-full pt-12`}
+                  }  fadeInMove flex items-center flex-col items-center justify-start h-full pt-6`}
               >
                 <h3 className="uppercase font-legan text-xs tracking-[0.2em] mt-5 mb-4 text-black-500">
     our martumpol location
@@ -280,16 +286,22 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
   <h1 className="text-2xl md:text-3xl px-4 text-center text-black font-ovo uppercase leading-snug">
     Gereja GKPI Palembang
   </h1>
+    {/* Waktu Martumpol */}
+    <div className="flex flex-col items-center mt-2 mb-2">
+      <span className="inline-block bg- text-black rounded-full px-3 py-1 text-sm font-legan tracking-widest shadow-md border border-black/15">
+        <span className="font-bold">09.30 WIB</span> s/d <span className="font-bold">12.00 WIB</span>
+      </span>
+    </div>
   {/* Alamat Detail */}
-  <p className="text-sm font-legan text-center text-gray-600 mt-2 px-8 leading-relaxed">
-    Jl Residen Abdul Rozak, Palembang
+  <p className="text-[10px] md:text-xs font-legan text-center text-black-600 whitespace-nowrap tracking-wide opacity-90">
+    Jl. Residen Abdul Rozak, Kota Palembang
   </p>
   {/* Button Google Maps */}
   <a
     href="https://www.google.com/maps/dir/?api=1&destination=Gereja+GKPI+Palembang" // Ganti dengan link share dari Google Maps jika berbeda
     target="_blank"
     rel="noopener noreferrer"
-    className="mt-3 px-5 py-2 bg-black text-white rounded-full font-legan text-xs uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 shadow-lg active:scale-95"
+    className="mt-2 px-5 py-2 bg-black text-white rounded-full font-legan text-xs uppercase tracking-widest hover:bg-gray-800 transition-all duration-300 shadow-lg active:scale-95"
   >
     View on Google Maps
   </a>
