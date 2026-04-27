@@ -14,11 +14,29 @@ const slides = [
 ];
 
 const Gallery: React.FC = () => {
-  const [selected, setSelected] = useState<string | null>(null);
+
+  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [slide, setSlide] = useState(0);
 
   const prevSlide = () => setSlide((s) => (s === 0 ? slides.length - 1 : s - 1));
   const nextSlide = () => setSlide((s) => (s === slides.length - 1 ? 0 : s + 1));
+
+  const openModal = (idx: number) => setSelectedIdx(idx);
+  const closeModal = () => setSelectedIdx(null);
+  const modalPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedIdx((idx) => {
+      if (idx === null) return null;
+      return idx === 0 ? slides[slide].length - 1 : idx - 1;
+    });
+  };
+  const modalNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedIdx((idx) => {
+      if (idx === null) return null;
+      return idx === slides[slide].length - 1 ? 0 : idx + 1;
+    });
+  };
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-1 md:px-0">
@@ -27,7 +45,7 @@ const Gallery: React.FC = () => {
         <button
           aria-label="Previous"
           onClick={prevSlide}
-          className="p-2 text-2xl text-black/60 hover:text-black/90 focus:outline-none"
+          className="p-2 text-2xl text-white/60 hover:text-white/90 focus:outline-none"
         >
           &#8592;
         </button>
@@ -38,29 +56,40 @@ const Gallery: React.FC = () => {
               src={src}
               alt={`Gallery ${slide * 6 + idx + 1}`}
               className="rounded-lg shadow-md cursor-pointer object-cover w-full aspect-[3/4] max-h-[220px] md:max-h-[320px] hover:scale-105 transition-transform duration-200 border-2 border-white"
-              onClick={() => setSelected(src)}
+              onClick={() => openModal(idx)}
             />
           ))}
         </div>
         <button
           aria-label="Next"
           onClick={nextSlide}
-          className="p-2 text-2xl text-black/60 hover:text-black/90 focus:outline-none"
+          className="p-2 text-2xl text-white/60 hover:text-white/90 focus:outline-none"
         >
           &#8594;
         </button>
       </div>
       <div className="mt-2 text-xs text-black/60">{slide + 1} / {slides.length}</div>
-      {selected && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={() => setSelected(null)}>
+      {selectedIdx !== null && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={closeModal}>
+          <button
+            aria-label="Previous image"
+            className="absolute left-4 md:left-12 text-4xl text-white/80 hover:text-white px-2 py-1"
+            onClick={modalPrev}
+          >&#8592;</button>
           <img
-            src={selected}
+            src={slides[slide][selectedIdx]}
             alt="Selected"
             className="max-w-[90vw] max-h-[80vh] rounded-xl shadow-2xl border-4 border-white"
+            onClick={e => e.stopPropagation()}
           />
           <button
+            aria-label="Next image"
+            className="absolute right-4 md:right-12 text-4xl text-white/80 hover:text-white px-2 py-1"
+            onClick={modalNext}
+          >&#8594;</button>
+          <button
             className="absolute top-8 right-8 text-white text-3xl font-bold bg-black/60 rounded-full px-4 py-2 hover:bg-black/90 transition"
-            onClick={e => { e.stopPropagation(); setSelected(null); }}
+            onClick={e => { e.stopPropagation(); closeModal(); }}
           >
             &times;
           </button>
