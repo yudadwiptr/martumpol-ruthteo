@@ -13,15 +13,15 @@ const Gallery: React.FC = () => {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
-      <h2 className="text-2xl font-ovo mb-6 text-black uppercase tracking-widest">Photo Gallery</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-3xl">
+    <div className="w-full h-full flex flex-col items-center justify-center px-1 md:px-0">
+      <h2 className="text-lg md:text-2xl font-ovo mb-3 md:mb-6 text-black uppercase tracking-widest">Photo Gallery</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 w-full max-w-2xl">
         {images.map((src, idx) => (
           <img
             key={src}
             src={src}
             alt={`Gallery ${idx + 1}`}
-            className="rounded-xl shadow-xl cursor-pointer object-cover w-full aspect-[3/4] max-h-[380px] md:max-h-[420px] hover:scale-105 transition-transform duration-200 border-4 border-white"
+            className="rounded-lg shadow-md cursor-pointer object-cover w-full aspect-[3/4] max-h-[220px] md:max-h-[320px] hover:scale-105 transition-transform duration-200 border-2 border-white"
             onClick={() => setSelected(src)}
           />
         ))}

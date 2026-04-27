@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   title: `The Martumpol of ${config.coupleNames}`,
   description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
   icons: {
-    icon: '/r&t.svg',
+    icon: 'https://martumpol-bellateo.vercel.app/r&t.svg',
   },
   openGraph: {
     title: `The Martumpol of ${config.coupleNames}`,
     description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
     images: [
       {
-        url: '/slide_7.jpg',
+        url: 'https://martumpol-bellateo.vercel.app/slide_7.jpg',
         width: 1200,
         height: 630,
         alt: 'The Martumpol of ' + config.coupleNames,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `The Martumpol of ${config.coupleNames}`,
     description: `Mauliate. Dengan kerendahan hati, kami mengundang Anda untuk merayakan hari kebahagiaan kami. Bergabunglah dengan kami dalam perayaan pernikahan kami, di mana cinta kami akan disatukan dalam ikatan suci. Kami berharap dapat berbagi momen istimewa ini dengan Anda.`,
-    images: ['/slide_7.jpg'],
+    images: ['https://martumpol-bellateo.vercel.app/slide_7.jpg'],
   },
 };
 
